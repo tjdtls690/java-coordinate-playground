@@ -9,8 +9,6 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class AxisTest {
-    
-    
     @ParameterizedTest
     @DisplayName("좌표 값 범위 0 ~ 24")
     @ValueSource(ints = {25, -1})
