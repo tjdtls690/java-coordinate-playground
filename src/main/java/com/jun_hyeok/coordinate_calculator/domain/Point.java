@@ -7,13 +7,13 @@ public class Point {
     private final Axis xAxis;
     private final Axis yAxis;
     
-    public Point(String coordinatePoints) {
+    public Point(String coordinatePoints) throws IllegalArgumentException {
         int[] axisNums = getAxisNums(coordinatePoints);
         this.xAxis = new Axis(axisNums[0]);
         this.yAxis = new Axis(axisNums[1]);
     }
     
-    public Point(Axis xAxis, Axis yAxis) {
+    public Point(Axis xAxis, Axis yAxis) throws IllegalArgumentException {
         this.xAxis = xAxis;
         this.yAxis = yAxis;
     }

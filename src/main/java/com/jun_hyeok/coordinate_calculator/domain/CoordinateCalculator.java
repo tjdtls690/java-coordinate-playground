@@ -6,11 +6,15 @@ import lombok.EqualsAndHashCode;
 public class CoordinateCalculator {
     private final Line line;
     
-    public CoordinateCalculator(String coordinate) {
+    public CoordinateCalculator(String coordinate) throws IllegalArgumentException {
         this(new Line(coordinate));
     }
     
     public CoordinateCalculator(Line line) {
         this.line = line;
+    }
+    
+    public double getLineLength() {
+        return line.length();
     }
 }
