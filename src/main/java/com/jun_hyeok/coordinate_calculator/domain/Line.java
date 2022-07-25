@@ -18,4 +18,8 @@ public class Line {
         this.fPoint = fPoint;
         this.sPoint = sPoint;
     }
+    
+    public double length() {
+        return Math.sqrt(Math.pow(fPoint.getXAxis() - sPoint.getXAxis(), 2) + Math.pow(fPoint.getYAxis() - sPoint.getYAxis(), 2));
+    }
 }

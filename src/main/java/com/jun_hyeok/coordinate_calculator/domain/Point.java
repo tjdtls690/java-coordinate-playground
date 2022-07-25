@@ -34,4 +34,12 @@ public class Point {
         coordinatePoints = coordinatePoints.substring(1, coordinatePoints.length() - 1);
         return coordinatePoints.split(",");
     }
+    
+    public int getXAxis() {
+        return xAxis.getAxisNum();
+    }
+    
+    public int getYAxis() {
+        return yAxis.getAxisNum();
+    }
 }
