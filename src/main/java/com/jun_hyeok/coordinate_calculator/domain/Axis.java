@@ -6,11 +6,11 @@ import lombok.Getter;
 @EqualsAndHashCode
 @Getter
 public class Axis {
-    public static final String COORDINATE_MAX_NUM_ERROR_MESSAGE = "좌표 값의 범위는 0 ~ 24 입니다. 다시 입력해주세요.";
+    public static final String COORDINATE_MAX_NUM_ERROR_MESSAGE = "좌표 값의 범위는 1 ~ 24 입니다. 다시 입력해주세요.";
     private final int axisNum;
     
     public Axis(int coordinateNum) throws IllegalArgumentException {
-        if (coordinateNum > 24 || coordinateNum < 0) {
+        if (coordinateNum > 24 || coordinateNum < 1) {
             throw new IllegalArgumentException(COORDINATE_MAX_NUM_ERROR_MESSAGE);
         }
         
