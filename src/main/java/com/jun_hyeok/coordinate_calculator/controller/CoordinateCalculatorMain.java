@@ -17,7 +17,7 @@ public class CoordinateCalculatorMain {
         String input = InputView.getCoordinate();
         try {
             return new CoordinateCalculator(input);
-        }catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
             return getCoordinateCalculator();
         }
