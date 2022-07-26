@@ -7,18 +7,16 @@ import com.jun_hyeok.coordinate_calculator.output.ResultView;
 public class CoordinateCalculatorMain {
     public static void main(String[] args) {
         CoordinateCalculator coordinateCalculator = getCoordinateCalculator();
-        
-        ResultView.printLineLength(coordinateCalculator);
         System.out.println();
+        
         ResultView.graphUIPrint(coordinateCalculator);
+        ResultView.printLineLength(coordinateCalculator);
     }
     
     private static CoordinateCalculator getCoordinateCalculator() {
         String input = InputView.getCoordinate();
-        CoordinateCalculator coordinateCalculator;
         try {
-            coordinateCalculator = new CoordinateCalculator(input);
-            return coordinateCalculator;
+            return new CoordinateCalculator(input);
         }catch (IllegalArgumentException e){
             System.out.println(e.getMessage());
             return getCoordinateCalculator();

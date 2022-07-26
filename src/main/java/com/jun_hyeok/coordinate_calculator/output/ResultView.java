@@ -13,7 +13,14 @@ public class ResultView {
     public static final int MAX_AXIS_NUM = 24;
     
     public static void printLineLength(CoordinateCalculator coordinateCalculator) {
-        System.out.println(coordinateCalculator.getLineLength());
+        double lineLength = coordinateCalculator.getLineLength();
+        
+        if (lineLength == (long) lineLength) {
+            System.out.printf("두 점 사이 거리는 %s\n", (long) lineLength);
+            return;
+        }
+        
+        System.out.printf("두 점 사이 거리는 %f\n", lineLength);
     }
     
     public static void graphUIPrint(CoordinateCalculator coordinateCalculator) {
@@ -21,6 +28,7 @@ public class ResultView {
         
         yAxisPrint(pointList);
         xAxisPrint();
+        System.out.println();
     }
     
     private static void yAxisPrint(List<Point> pointList) {
@@ -34,7 +42,7 @@ public class ResultView {
     private static void isAllAxisMarkPrint(List<Point> pointList, int yAxisNum) {
         List<Point> yAxisNumEqualPointList = getYAxisNumEqualPointList(pointList, yAxisNum);
         
-        if(yAxisNumEqualPointList.size() > 0) {
+        if (yAxisNumEqualPointList.size() > 0) {
             checkEqualToXAxis(yAxisNumEqualPointList);
         }
         
