@@ -2,6 +2,8 @@ package com.jun_hyeok.coordinate_calculator.domain;
 
 import lombok.EqualsAndHashCode;
 
+import java.util.List;
+
 @EqualsAndHashCode
 public class CoordinateCalculator {
     private final Line line;
@@ -16,5 +18,9 @@ public class CoordinateCalculator {
     
     public double getLineLength() {
         return line.length();
+    }
+    
+    public List<Point> getPoints() {
+        return line.getPoints();
     }
 }

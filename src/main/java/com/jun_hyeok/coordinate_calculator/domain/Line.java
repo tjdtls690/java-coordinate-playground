@@ -2,6 +2,9 @@ package com.jun_hyeok.coordinate_calculator.domain;
 
 import lombok.EqualsAndHashCode;
 
+import java.util.Arrays;
+import java.util.List;
+
 @EqualsAndHashCode
 public class Line {
     
@@ -21,5 +24,9 @@ public class Line {
     
     public double length() {
         return Math.sqrt(Math.pow(fPoint.getXAxis() - sPoint.getXAxis(), 2) + Math.pow(fPoint.getYAxis() - sPoint.getYAxis(), 2));
+    }
+    
+    public List<Point> getPoints() {
+        return Arrays.asList(fPoint, sPoint);
     }
 }

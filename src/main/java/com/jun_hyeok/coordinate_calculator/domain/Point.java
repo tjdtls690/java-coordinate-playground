@@ -42,4 +42,12 @@ public class Point {
     public int getYAxis() {
         return yAxis.getAxisNum();
     }
+    
+    public boolean isEqualYAxis(Axis yAxis) {
+        return this.yAxis.equals(yAxis);
+    }
+    
+    public boolean isEqualXAxis(Axis xAxis) {
+        return this.xAxis.equals(xAxis);
+    }
 }

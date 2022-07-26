@@ -7,7 +7,10 @@ import com.jun_hyeok.coordinate_calculator.output.ResultView;
 public class CoordinateCalculatorMain {
     public static void main(String[] args) {
         CoordinateCalculator coordinateCalculator = getCoordinateCalculator();
+        
         ResultView.printLineLength(coordinateCalculator);
+        System.out.println();
+        ResultView.graphUIPrint(coordinateCalculator);
     }
     
     private static CoordinateCalculator getCoordinateCalculator() {
