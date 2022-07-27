@@ -11,10 +11,10 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 public class AxisTest {
     @ParameterizedTest
     @DisplayName("좌표 값 범위 0 ~ 24")
-    @ValueSource(ints = {25, -1})
+    @ValueSource(ints = {25, 0})
     void max_coordinate(int coordinateNum) {
         assertThatThrownBy(() -> new Axis(coordinateNum))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("좌표 값의 범위는 0 ~ 24 입니다. 다시 입력해주세요.");
+                .hasMessage("좌표 값의 범위는 1 ~ 24 입니다. 다시 입력해주세요.");
     }
 }
