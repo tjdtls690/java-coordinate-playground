@@ -50,4 +50,12 @@ public class Point {
     public boolean isEqualXAxis(Axis xAxis) {
         return this.xAxis.equals(xAxis);
     }
+    
+    public boolean isEqualYAxis(Point sPoint) {
+        return this.yAxis.equals(sPoint.yAxis);
+    }
+    
+    public boolean isEqualXAxis(Point sPoint) {
+        return this.xAxis.equals(sPoint.xAxis);
+    }
 }

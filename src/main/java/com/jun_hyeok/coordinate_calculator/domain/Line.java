@@ -29,4 +29,12 @@ public class Line {
     public List<Point> getPoints() {
         return Arrays.asList(fPoint, sPoint);
     }
+    
+    public boolean isRightAngle(int lineOrderNum) {
+        if (lineOrderNum % 2 == 0) {
+            return fPoint.isEqualYAxis(sPoint);
+        }
+        
+        return fPoint.isEqualXAxis(sPoint);
+    }
 }
