@@ -28,7 +28,7 @@ public class Square {
     
     private void isRightAngleLine(int lineOrderNum) throws IllegalArgumentException {
         if (!lines.get(lineOrderNum).isRightAngle(lineOrderNum)) {
-            throw new IllegalArgumentException("사각형은 뒤틀어진 사다리꼴이나 마름모 꼴일 수 없습니다.");
+            throw new IllegalArgumentException("사각형은 뒤틀어진 사다리꼴이나 마름모 꼴이 아닌 직사각형만 가능합니다.");
         }
     }
     
