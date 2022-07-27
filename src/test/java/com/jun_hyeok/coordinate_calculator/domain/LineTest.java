@@ -8,8 +8,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LineTest {
-    
-    
     @Test
     @DisplayName("두 점 사이의 거리 계산")
     void two_point_distance() {

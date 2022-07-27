@@ -1,11 +1,12 @@
 package com.jun_hyeok.coordinate_calculator.domain;
 
+import lombok.EqualsAndHashCode;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
+@EqualsAndHashCode
 public class Square {
     private final List<Line> lines;
     
@@ -19,25 +20,15 @@ public class Square {
     
     private List<Line> createAndGetLines(String coordinateNames) {
         final List<Line> lines = new ArrayList<>();
-        
+        addLines(coordinateNames, lines);
+        return lines;
+    }
+    
+    private static void addLines(String coordinateNames, List<Line> lines) {
         String[] split = coordinateNames.split("-");
         for (int i = 0; i < 4; i++) {
             String lineCoordinate = StringUtils.join(split[i], "-", split[(i + 1) % 4]);
             lines.add(new Line(lineCoordinate));
         }
-        return lines;
-    }
-    
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Square square = (Square) o;
-        return Objects.equals(lines, square.lines);
-    }
-    
-    @Override
-    public int hashCode() {
-        return Objects.hash(lines);
     }
 }

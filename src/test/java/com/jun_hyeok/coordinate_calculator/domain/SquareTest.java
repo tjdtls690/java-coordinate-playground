@@ -10,8 +10,6 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class SquareTest {
-    
-    
     @Test
     @DisplayName("좌표값 저장")
     void data_save() {

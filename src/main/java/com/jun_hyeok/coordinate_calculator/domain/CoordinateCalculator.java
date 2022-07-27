@@ -1,19 +1,37 @@
 package com.jun_hyeok.coordinate_calculator.domain;
 
 import lombok.EqualsAndHashCode;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 
 @EqualsAndHashCode
 public class CoordinateCalculator {
-    private final Line line;
+    private Line line;
+    private Square square;
     
     public CoordinateCalculator(String coordinate) throws IllegalArgumentException {
-        this(new Line(coordinate));
+        long delimCount = getDelimCount(coordinate);
+        if (delimCount == 3) {
+            this.square = new Square(coordinate);
+            return;
+        }
+        
+        this.line = new Line(coordinate);
     }
     
     public CoordinateCalculator(Line line) {
         this.line = line;
+    }
+    
+    public CoordinateCalculator(Square square) {
+        this.square = square;
+    }
+    
+    private long getDelimCount(String coordinate) {
+        return coordinate.chars()
+                .filter(value -> value == '-')
+                .count();
     }
     
     public double getLineLength() {
