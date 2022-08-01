@@ -10,7 +10,13 @@ public class CoordinateCalculatorMain {
         System.out.println();
         
         ResultView.graphUIPrint(coordinateCalculator);
-        ResultView.printLineLength(coordinateCalculator);
+        
+        if (coordinateCalculator.isLine()) {
+            ResultView.printLineLength(coordinateCalculator);
+            return;
+        }
+        
+        ResultView.printExtent(coordinateCalculator);
     }
     
     private static CoordinateCalculator getCoordinateCalculator() {

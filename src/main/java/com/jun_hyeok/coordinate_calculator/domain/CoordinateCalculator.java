@@ -41,4 +41,16 @@ public class CoordinateCalculator {
     public List<Point> getPoints() {
         return line.getPoints();
     }
+    
+    public boolean isLine() {
+        return line != null;
+    }
+    
+    public List<Point> getAllPoints() {
+        return square.getPoints();
+    }
+    
+    public int getExtent() {
+        return square.getExtent();
+    }
 }

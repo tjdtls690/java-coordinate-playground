@@ -24,11 +24,19 @@ public class ResultView {
     }
     
     public static void graphUIPrint(CoordinateCalculator coordinateCalculator) {
-        List<Point> pointList = coordinateCalculator.getPoints();
-        
+        List<Point> pointList = getPoints(coordinateCalculator);
+    
         yAxisPrint(pointList);
         xAxisPrint();
         System.out.println();
+    }
+    
+    private static List<Point> getPoints(CoordinateCalculator coordinateCalculator) {
+        if (coordinateCalculator.isLine()) {
+            return coordinateCalculator.getPoints();
+        }
+        
+        return coordinateCalculator.getAllPoints();
     }
     
     private static void yAxisPrint(List<Point> pointList) {
@@ -108,5 +116,9 @@ public class ResultView {
         }
         
         System.out.print("  ");
+    }
+    
+    public static void printExtent(CoordinateCalculator coordinateCalculator) {
+        System.out.println("사각형 넓이 : " + coordinateCalculator.getExtent());
     }
 }

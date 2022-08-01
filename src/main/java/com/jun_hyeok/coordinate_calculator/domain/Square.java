@@ -45,4 +45,30 @@ public class Square {
             lines.add(new Line(lineCoordinate));
         }
     }
+    
+    public List<Point> getPoints() {
+        List<Point> points = new ArrayList<>();
+        
+        for (Line line : lines) {
+            checkPoint(points, line);
+        }
+        
+        return points;
+    }
+    
+    private static void checkPoint(List<Point> points, Line line) {
+        for (Point point : line.getPoints()) {
+            addPoints(points, point);
+        }
+    }
+    
+    private static void addPoints(List<Point> points, Point point) {
+        if (!points.contains(point)) {
+            points.add(point);
+        }
+    }
+    
+    public int getExtent() {
+        return (int) (lines.get(0).length() * lines.get(1).length());
+    }
 }
