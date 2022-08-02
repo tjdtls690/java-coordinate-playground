@@ -61,4 +61,8 @@ public class CoordinateCalculator {
     public int getExtent() {
         return figure.getExtent();
     }
+    
+    public boolean isSquare() {
+        return figure instanceof Square;
+    }
 }

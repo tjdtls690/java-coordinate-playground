@@ -119,6 +119,10 @@ public class ResultView {
     }
     
     public static void printExtent(CoordinateCalculator coordinateCalculator) {
-        System.out.println("사각형 넓이 : " + coordinateCalculator.getExtent());
+        if (coordinateCalculator.isSquare()) {
+            System.out.println("사각형 넓이 : " + coordinateCalculator.getExtent());
+            return;
+        }
+        System.out.println("삼각형 넓이 : " + coordinateCalculator.getExtent());
     }
 }
