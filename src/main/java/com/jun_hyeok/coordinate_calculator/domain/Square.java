@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @EqualsAndHashCode
-public class Square {
+public class Square implements Figurative{
     private final List<Line> lines;
     
     public Square(String coordinateNames) throws IllegalArgumentException {
@@ -46,6 +46,7 @@ public class Square {
         }
     }
     
+    @Override
     public List<Point> getPoints() {
         List<Point> points = new ArrayList<>();
         
@@ -68,6 +69,7 @@ public class Square {
         }
     }
     
+    @Override
     public int getExtent() {
         return (int) (lines.get(0).length() * lines.get(1).length());
     }

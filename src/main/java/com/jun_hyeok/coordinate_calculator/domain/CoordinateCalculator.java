@@ -1,19 +1,18 @@
 package com.jun_hyeok.coordinate_calculator.domain;
 
 import lombok.EqualsAndHashCode;
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 
 @EqualsAndHashCode
 public class CoordinateCalculator {
     private Line line;
-    private Square square;
+    private Figurative figure;
     
     public CoordinateCalculator(String coordinate) throws IllegalArgumentException {
         long delimCount = getDelimCount(coordinate);
         if (delimCount == 3) {
-            this.square = new Square(coordinate);
+            this.figure = new Square(coordinate);
             return;
         }
         
@@ -25,7 +24,7 @@ public class CoordinateCalculator {
     }
     
     public CoordinateCalculator(Square square) {
-        this.square = square;
+        this.figure = square;
     }
     
     private long getDelimCount(String coordinate) {
@@ -47,10 +46,10 @@ public class CoordinateCalculator {
     }
     
     public List<Point> getAllPoints() {
-        return square.getPoints();
+        return figure.getPoints();
     }
     
     public int getExtent() {
-        return square.getExtent();
+        return figure.getExtent();
     }
 }
