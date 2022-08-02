@@ -22,4 +22,12 @@ public class CoordinateCalculatorTest {
         assertThat(coordinateCalculator)
                 .isEqualTo(new CoordinateCalculator(new Square("(10,10)-(22,10)-(22,18)-(10,18)")));
     }
+    
+    @Test
+    @DisplayName("좌표를 3개 입력한 경우 삼각형으로 가정")
+    void is_triangle() {
+        CoordinateCalculator coordinateCalculator = new CoordinateCalculator("(10,10)-(14,15)-(20,8)");
+        assertThat(coordinateCalculator)
+                .isEqualTo(new CoordinateCalculator(new Triangle("(10,10)-(14,15)-(20,8)")));
+    }
 }

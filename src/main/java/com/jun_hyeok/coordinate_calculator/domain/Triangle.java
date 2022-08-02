@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @EqualsAndHashCode
-public class Triangle {
+public class Triangle implements Figurative{
     private final List<Line> lines;
     
     public Triangle(String coordinateNames) {
@@ -30,5 +30,15 @@ public class Triangle {
     
     public Triangle(List<Line> lines) {
         this.lines = lines;
+    }
+    
+    @Override
+    public List<Point> getPoints() {
+        return null;
+    }
+    
+    @Override
+    public int getExtent() {
+        return 0;
     }
 }

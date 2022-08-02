@@ -16,6 +16,11 @@ public class CoordinateCalculator {
             return;
         }
         
+        if (delimCount == 2) {
+            this.figure = new Triangle(coordinate);
+            return;
+        }
+        
         this.line = new Line(coordinate);
     }
     
@@ -25,6 +30,10 @@ public class CoordinateCalculator {
     
     public CoordinateCalculator(Square square) {
         this.figure = square;
+    }
+    
+    public CoordinateCalculator(Triangle triangle) {
+        this.figure = triangle;
     }
     
     private long getDelimCount(String coordinate) {
