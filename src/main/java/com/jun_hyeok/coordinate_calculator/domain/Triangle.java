@@ -35,7 +35,25 @@ public class Triangle implements Figurative{
     
     @Override
     public List<Point> getPoints() {
-        return null;
+        List<Point> points = new ArrayList<>();
+    
+        for (Line line : lines) {
+            checkPoint(points, line);
+        }
+    
+        return points;
+    }
+    
+    private void checkPoint(List<Point> points, Line line) {
+        for (Point point : line.getPoints()) {
+            addPoints(points, point);
+        }
+    }
+    
+    private void addPoints(List<Point> points, Point point) {
+        if (!points.contains(point)) {
+            points.add(point);
+        }
     }
     
     @Override

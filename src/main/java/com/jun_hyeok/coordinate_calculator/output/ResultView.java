@@ -25,7 +25,7 @@ public class ResultView {
     
     public static void graphUIPrint(CoordinateCalculator coordinateCalculator) {
         List<Point> pointList = getPoints(coordinateCalculator);
-    
+        
         yAxisPrint(pointList);
         xAxisPrint();
         System.out.println();
