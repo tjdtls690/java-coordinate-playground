@@ -5,6 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @EqualsAndHashCode
 public class Triangle implements Figurative{
@@ -39,6 +40,12 @@ public class Triangle implements Figurative{
     
     @Override
     public int getExtent() {
-        return 0;
+        double sum = 0.0;
+        for (Line line : lines) {
+            sum += line.length();
+        }
+        
+        sum /= 2.0;
+        return (int) Math.round(Math.sqrt(sum * (sum - lines.get(0).length()) * (sum - lines.get(1).length()) * (sum - lines.get(2).length())));
     }
 }

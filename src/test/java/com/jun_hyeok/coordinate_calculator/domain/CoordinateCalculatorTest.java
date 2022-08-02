@@ -30,4 +30,20 @@ public class CoordinateCalculatorTest {
         assertThat(coordinateCalculator)
                 .isEqualTo(new CoordinateCalculator(new Triangle("(10,10)-(14,15)-(20,8)")));
     }
+    
+    @Test
+    @DisplayName("사각형 넓이 반환")
+    void extent_square() {
+        CoordinateCalculator coordinateCalculator = new CoordinateCalculator("(10,10)-(22,10)-(22,18)-(10,18)");
+        int extent = coordinateCalculator.getExtent();
+        assertThat(extent).isEqualTo(96);
+    }
+    
+    @Test
+    @DisplayName("삼각형 넓이 반환")
+    void extent_triangle() {
+        CoordinateCalculator coordinateCalculator = new CoordinateCalculator("(10,10)-(14,15)-(20,8)");
+        int extent = coordinateCalculator.getExtent();
+        assertThat(extent).isEqualTo(29);
+    }
 }
