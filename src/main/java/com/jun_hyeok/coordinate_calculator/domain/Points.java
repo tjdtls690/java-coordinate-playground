@@ -9,7 +9,7 @@ public class Points {
         this.points = points;
     }
     
-    public boolean hasPoint(int xAxis, int yAxis) {
+    public boolean hasPoint(int xAxis, int yAxis) throws IllegalArgumentException {
         return points.stream()
                 .anyMatch(point -> point.equals(new Point(xAxis, yAxis)));
     }
