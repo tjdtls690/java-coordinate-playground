@@ -18,4 +18,10 @@ public class Point {
     public boolean isSame(int xAxis, int yAxis) {
         return this.xAxis == xAxis && this.yAxis == yAxis;
     }
+    
+    public double distance(Point point) {
+        return Math.sqrt(Math.pow(this.xAxis - point.xAxis, 2) + Math.pow(this.yAxis - point.yAxis, 2));
+    }
+    
+    // 제곱근((A.x - B.x)^제곱 + (A.y - B.y)^제곱)
 }

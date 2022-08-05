@@ -13,4 +13,8 @@ public class Line {
         return points.stream()
                 .anyMatch(point -> point.isSame(xAxis, yAxis));
     }
+    
+    public double length() {
+        return points.get(0).distance(points.get(1));
+    }
 }
