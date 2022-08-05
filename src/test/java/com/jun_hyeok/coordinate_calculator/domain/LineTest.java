@@ -26,8 +26,8 @@ public class LineTest {
     @Test
     @DisplayName("좌표 저장 확인")
     void save_coordinate() {
-        assertThat(line.hasPoint(3,4)).isTrue();
-        assertThat(line.hasPoint(1,2)).isTrue();
+        assertThat(line.hasPoint(3, 4)).isTrue();
+        assertThat(line.hasPoint(1, 2)).isTrue();
     }
     
     @AfterEach
