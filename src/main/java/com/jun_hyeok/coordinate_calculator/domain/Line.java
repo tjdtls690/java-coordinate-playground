@@ -3,18 +3,17 @@ package com.jun_hyeok.coordinate_calculator.domain;
 import java.util.List;
 
 public class Line {
-    private final List<Point> points;
+    private final Points points;
     
     public Line(List<Point> points) {
-        this.points = points;
+        this.points = new Points(points);
     }
     
     public boolean hasPoint(int xAxis, int yAxis) {
-        return points.stream()
-                .anyMatch(point -> point.isSame(xAxis, yAxis));
+        return points.hasPoint(xAxis, yAxis);
     }
     
-    public double length() {
-        return points.get(0).distance(points.get(1));
+    public double getExtent() {
+        return points.getDistance();
     }
 }

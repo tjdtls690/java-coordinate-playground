@@ -34,7 +34,7 @@ public class LineTest {
     @Test
     @DisplayName("선 길이 구하기")
     void find_line_length() {
-        double length = line.length();
+        double length = line.getExtent();
         assertThat(length).isEqualTo(6.403124, offset(0.0000009999));
     }
     
