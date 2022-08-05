@@ -1,27 +1,18 @@
 package com.jun_hyeok.coordinate_calculator.domain;
 
+import lombok.EqualsAndHashCode;
+
+@EqualsAndHashCode
 public class Point {
-    public static final int MAX_COORDINATE_NUM = 24;
-    public static final int MIN_COORDINATE_NUM = 1;
-    private final int xAxis;
-    private final int yAxis;
+    private final Axis xAxis;
+    private final Axis yAxis;
     
     public Point(int xAxis, int yAxis) throws IllegalArgumentException {
-        if (xAxis > MAX_COORDINATE_NUM || xAxis < MIN_COORDINATE_NUM || yAxis > MAX_COORDINATE_NUM || yAxis < MIN_COORDINATE_NUM) {
-            throw new IllegalArgumentException("좌표의 범위를 벗어났습니다. 다시 입력해주세요.");
-        }
-        
-        this.xAxis = xAxis;
-        this.yAxis = yAxis;
-    }
-    
-    public boolean isSame(int xAxis, int yAxis) {
-        return this.xAxis == xAxis && this.yAxis == yAxis;
+        this.xAxis = new Axis(xAxis);
+        this.yAxis = new Axis(yAxis);
     }
     
     public double distance(Point point) {
-        return Math.sqrt(Math.pow(this.xAxis - point.xAxis, 2) + Math.pow(this.yAxis - point.yAxis, 2));
+        return Math.sqrt(Math.pow(this.xAxis.distance(point.xAxis), 2) + Math.pow(this.yAxis.distance(point.yAxis), 2));
     }
-    
-    // 제곱근((A.x - B.x)^제곱 + (A.y - B.y)^제곱)
 }

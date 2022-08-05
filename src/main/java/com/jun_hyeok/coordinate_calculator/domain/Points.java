@@ -11,7 +11,7 @@ public class Points {
     
     public boolean hasPoint(int xAxis, int yAxis) {
         return points.stream()
-                .anyMatch(point -> point.isSame(xAxis, yAxis));
+                .anyMatch(point -> point.equals(new Point(xAxis, yAxis)));
     }
     
     public double getDistance() {
