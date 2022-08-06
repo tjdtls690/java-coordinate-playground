@@ -11,6 +11,7 @@ import java.util.regex.Pattern;
 public class InputView {
     public static final String NOT_VALID_INPUT = "올바른 입력값이 아닙니다. 다시 입력해주세요.";
     public static final String INPUT_GUIDE_MESSAGE = "좌표를 입력하세요.";
+    public static final String COORDINATE_DELIMER = "-";
     private static BufferedReader br;
     
     public InputView() {
@@ -31,11 +32,16 @@ public class InputView {
         try {
             input = input.replace(" ", "");
             isCorrectInput(input);
-            return null;
+            return createLine(input);
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
             return getLine();
         }
+    }
+    
+    private static Line createLine(String input) {
+        String[] coordinates = input.split(COORDINATE_DELIMER);
+        return null;
     }
     
     private static void isCorrectInput(String input) throws IllegalArgumentException {
