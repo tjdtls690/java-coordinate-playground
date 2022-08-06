@@ -1,10 +1,13 @@
 package com.jun_hyeok.coordinate_calculator.view;
 
 import com.jun_hyeok.coordinate_calculator.domain.Line;
+import com.jun_hyeok.coordinate_calculator.domain.Point;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -12,17 +15,12 @@ public class InputView {
     public static final String NOT_VALID_INPUT = "올바른 입력값이 아닙니다. 다시 입력해주세요.";
     public static final String INPUT_GUIDE_MESSAGE = "좌표를 입력하세요.";
     public static final String COORDINATE_DELIMER = "-";
-    private static BufferedReader br;
-    
-    public InputView() {
-        br = new BufferedReader(new InputStreamReader(System.in));
-    }
+    private static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     
     public static Line getLine() {
         System.out.println(INPUT_GUIDE_MESSAGE);
         try {
-            String input = br.readLine();
-            return getLine(input);
+            return getLine(br.readLine());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -32,16 +30,36 @@ public class InputView {
         try {
             input = input.replace(" ", "");
             isCorrectInput(input);
-            return createLine(input);
+            return createLine(createPoints(input));
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
             return getLine();
         }
     }
     
-    private static Line createLine(String input) {
+    private static Line createLine(List<Point> points) {
+        return new Line(points);
+    }
+    
+    private static List<Point> createPoints(String input) throws IllegalArgumentException {
         String[] coordinates = input.split(COORDINATE_DELIMER);
-        return null;
+        List<Point> points = new ArrayList<>();
+        for (String coordinate : coordinates) {
+            points.add(createPoint(coordinate));
+        }
+        
+        return points;
+    }
+    
+    private static Point createPoint(String coordinate) throws IllegalArgumentException {
+        Matcher matcher = Pattern.compile("\\(([0-9]{1,2}),([0-9]{1,2})\\)").matcher(coordinate);
+        if (matcher.matches()) {
+            int xAxis = Integer.parseInt(matcher.group(1));
+            int yAxis = Integer.parseInt(matcher.group(2));
+            
+            return new Point(xAxis, yAxis);
+        }
+        throw new IllegalArgumentException(NOT_VALID_INPUT);
     }
     
     private static void isCorrectInput(String input) throws IllegalArgumentException {
