@@ -29,6 +29,7 @@ public class InputView {
     
     private static Line getLine(String input) {
         try {
+            input = input.replace(" ", "");
             isCorrectInput(input);
             return null;
         } catch (IllegalArgumentException e) {
