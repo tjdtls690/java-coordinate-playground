@@ -15,4 +15,8 @@ public class Point {
     public double distance(Point point) {
         return Math.sqrt(Math.pow(this.xAxis.distance(point.xAxis), 2) + Math.pow(this.yAxis.distance(point.yAxis), 2));
     }
+    
+    public boolean hasPoint(int xAxis, int yAxis) {
+        return this.equals(new Point(xAxis, yAxis));
+    }
 }

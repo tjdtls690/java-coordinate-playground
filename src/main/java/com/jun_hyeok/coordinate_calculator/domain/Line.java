@@ -16,4 +16,8 @@ public class Line {
     public double getExtent() {
         return points.getDistance();
     }
+    
+    public List<Point> getPoints() {
+        return points.getPoints();
+    }
 }

@@ -21,4 +21,8 @@ public class Points {
     public double getDistance() {
         return points.get(0).distance(points.get(1));
     }
+    
+    public List<Point> getPoints() {
+        return points;
+    }
 }
