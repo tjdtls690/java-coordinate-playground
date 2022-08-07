@@ -37,7 +37,7 @@ public class InputView {
         }
     }
     
-    private static Line createLine(List<Point> points) {
+    private static Line createLine(List<Point> points) throws IllegalArgumentException {
         return new Line(points);
     }
     

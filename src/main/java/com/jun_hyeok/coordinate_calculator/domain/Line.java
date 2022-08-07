@@ -5,7 +5,7 @@ import java.util.List;
 public class Line {
     private final Points points;
     
-    public Line(List<Point> points) {
+    public Line(List<Point> points) throws IllegalArgumentException {
         this.points = new Points(points);
     }
     
