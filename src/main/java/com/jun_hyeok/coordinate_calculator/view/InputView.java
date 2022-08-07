@@ -1,5 +1,6 @@
 package com.jun_hyeok.coordinate_calculator.view;
 
+import com.jun_hyeok.coordinate_calculator.domain.Figure;
 import com.jun_hyeok.coordinate_calculator.domain.Line;
 import com.jun_hyeok.coordinate_calculator.domain.Point;
 
@@ -17,28 +18,28 @@ public class InputView {
     public static final String COORDINATE_DELIMER = "-";
     private static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     
-    public static Line getLine() {
+    public static Figure getFigure() {
         System.out.println(INPUT_GUIDE_MESSAGE);
         try {
-            return getLine(br.readLine());
+            return getFigure(br.readLine());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
     
-    private static Line getLine(String input) {
+    public static Figure getFigure(String input) {
         try {
             input = input.replace(" ", "");
             isCorrectInput(input);
             return createLine(createPoints(input));
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
-            return getLine();
+            return getFigure();
         }
     }
     
-    private static Line createLine(List<Point> points) throws IllegalArgumentException {
-        return new Line(points);
+    private static Figure createLine(List<Point> points) throws IllegalArgumentException {
+        return FigureFactory.create(points);
     }
     
     private static List<Point> createPoints(String input) throws IllegalArgumentException {

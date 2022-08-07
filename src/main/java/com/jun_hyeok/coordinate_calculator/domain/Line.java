@@ -1,26 +1,20 @@
 package com.jun_hyeok.coordinate_calculator.domain;
 
+import com.jun_hyeok.coordinate_calculator.view.InputView;
+
 import java.util.List;
 
-public class Line {
-    private final Points points;
-    
+public class Line extends AbstractFigure {
     public Line(List<Point> points) throws IllegalArgumentException {
-        this.points = new Points(points);
+        super(points);
     }
     
-    public boolean hasPoint(int xAxis, int yAxis) {
-        return points.hasPoint(xAxis, yAxis);
-    }
-    
+    @Override
     public double getExtent() {
-        return points.getDistance();
+        return getPoints().getDistance();
     }
     
-    public List<Point> getPoints() {
-        return points.getPoints();
-    }
-    
+    @Override
     public String getResultExtentString() {
         return "두 점 사이 거리는 " + getExtent();
     }

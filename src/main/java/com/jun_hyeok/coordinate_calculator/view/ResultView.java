@@ -1,7 +1,9 @@
 package com.jun_hyeok.coordinate_calculator.view;
 
+import com.jun_hyeok.coordinate_calculator.domain.Figure;
 import com.jun_hyeok.coordinate_calculator.domain.Line;
 import com.jun_hyeok.coordinate_calculator.domain.Point;
+import com.jun_hyeok.coordinate_calculator.domain.Points;
 
 import java.util.List;
 
@@ -13,8 +15,8 @@ public class ResultView {
     public static final String START_POINT = "+";
     public static final String FOUR_BAR = "----";
     
-    public static void printCoordinateGraph(Line line) {
-        List<Point> points = line.getPoints();
+    public static void printCoordinateGraph(Figure figure) {
+        Points points = figure.getPoints();
         for (int yAxis = MAX_AXIS_NUM; yAxis >= MIN_AXIS_NUM; yAxis--){
             evenNumPrint(yAxis);
             System.out.print("|");
@@ -44,7 +46,7 @@ public class ResultView {
         }
     }
     
-    private static void coordinatePrint(int yAxis, List<Point> points) {
+    private static void coordinatePrint(int yAxis, Points points) {
         for (int xAxis = MIN_AXIS_NUM; xAxis <= MAX_AXIS_NUM; xAxis++) {
             if (isPoint(points, xAxis, yAxis)) {
                 System.out.printf("%4s", "*");
@@ -55,8 +57,8 @@ public class ResultView {
         System.out.println();
     }
     
-    private static boolean isPoint(List<Point> points, int xAxis, int yAxis) {
-        return points.stream()
+    private static boolean isPoint(Points points, int xAxis, int yAxis) {
+        return points.getPoints().stream()
                 .anyMatch(point -> point.hasPoint(xAxis, yAxis));
     }
     
@@ -68,7 +70,7 @@ public class ResultView {
         System.out.print(FOUR_SPACE);
     }
     
-    public static void printExtentResult(Line line) {
-        System.out.println("\n" + line.getResultExtentString());
+    public static void printExtentResult(Figure figure) {
+        System.out.println("\n" + figure.getResultExtentString());
     }
 }
