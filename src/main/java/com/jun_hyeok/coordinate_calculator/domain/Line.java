@@ -20,4 +20,8 @@ public class Line {
     public List<Point> getPoints() {
         return points.getPoints();
     }
+    
+    public String getResultExtentString() {
+        return "두 점 사이 거리는 " + getExtent();
+    }
 }

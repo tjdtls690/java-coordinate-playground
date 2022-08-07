@@ -34,6 +34,7 @@ public class ResultView {
         for (int i = MIN_AXIS_NUM; i <= MAX_AXIS_NUM; i++) {
             evenNumPrint(i);
         }
+        System.out.println();
     }
     
     private static void printXAxisBar() {
@@ -65,5 +66,9 @@ public class ResultView {
             return;
         }
         System.out.print(FOUR_SPACE);
+    }
+    
+    public static void printExtentResult(Line line) {
+        System.out.println("\n" + line.getResultExtentString());
     }
 }

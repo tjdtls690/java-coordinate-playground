@@ -38,6 +38,13 @@ public class LineTest {
         assertThat(length).isEqualTo(6.403124, offset(0.0000009999));
     }
     
+    @Test
+    @DisplayName("선 길이 출력 문자열")
+    void line_length_print() {
+        String result = line.getResultExtentString();
+        assertThat(result).isEqualTo("두 점 사이 거리는 6.4031242374328485");
+    }
+    
     @AfterEach
     void tearDown() {
         line = null;

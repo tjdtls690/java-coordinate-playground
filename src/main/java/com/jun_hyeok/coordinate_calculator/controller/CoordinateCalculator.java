@@ -8,5 +8,6 @@ public class CoordinateCalculator {
     public void run() {
         Line line = InputView.getLine();
         ResultView.printCoordinateGraph(line);
+        ResultView.printExtentResult(line);
     }
 }
