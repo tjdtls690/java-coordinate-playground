@@ -1,7 +1,7 @@
 package com.jun_hyeok.coordinate_calculator.view;
 
 import com.jun_hyeok.coordinate_calculator.domain.Figure;
-import com.jun_hyeok.coordinate_calculator.domain.Line;
+import com.jun_hyeok.coordinate_calculator.domain.FigureFactory;
 import com.jun_hyeok.coordinate_calculator.domain.Point;
 
 import java.io.BufferedReader;

@@ -20,4 +20,8 @@ public class Axis {
     public double distance(Axis axis) {
         return this.axis - axis.axis;
     }
+    
+    public int getAxis() {
+        return axis;
+    }
 }

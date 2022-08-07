@@ -19,4 +19,12 @@ public class Point {
     public boolean hasPoint(int xAxis, int yAxis) {
         return this.equals(new Point(xAxis, yAxis));
     }
+    
+    public int getXAxis() {
+        return xAxis.getAxis();
+    }
+    
+    public int getYAxis() {
+        return yAxis.getAxis();
+    }
 }

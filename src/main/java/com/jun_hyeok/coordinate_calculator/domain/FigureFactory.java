@@ -1,4 +1,4 @@
-package com.jun_hyeok.coordinate_calculator.view;
+package com.jun_hyeok.coordinate_calculator.domain;
 
 import com.jun_hyeok.coordinate_calculator.domain.Figure;
 import com.jun_hyeok.coordinate_calculator.domain.Line;
@@ -21,7 +21,7 @@ public class FigureFactory {
         figureFactoryMap.put(SQUARE_POINTS_NUM, Square::new);
     }
     
-    public static Figure create(List<Point> points) {
+    public static Figure create(List<Point> points) throws IllegalArgumentException {
         return figureFactoryMap.get(points.size()).apply(points);
     }
 }
