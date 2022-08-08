@@ -1,5 +1,6 @@
 package com.jun_hyeok.coordinate_calculator.domain;
 
+import com.jun_hyeok.coordinate_calculator.view.InputView;
 import lombok.EqualsAndHashCode;
 
 import java.util.List;
@@ -43,8 +44,18 @@ public class Square extends AbstractFigure {
     }
     
     @Override
-    public double getExtent() {
-        return 0;
+    public double getExtent() throws IllegalArgumentException {
+        Points points = getPoints();
+        int xAxisDistance = convertAxisDistance(convertToUniqueXAxis(points.getPoints()));
+        int yAxisDistance = convertAxisDistance(convertToUniqueYAxis(points.getPoints()));
+        
+        return xAxisDistance * yAxisDistance;
+    }
+    
+    private int convertAxisDistance(Set<Integer> points) throws IllegalArgumentException {
+        return points.stream()
+                .reduce((n1, n2) -> Math.abs(n1 - n2))
+                .orElseThrow(() -> new IllegalArgumentException(InputView.NOT_VALID_INPUT));
     }
     
     @Override
