@@ -4,6 +4,7 @@ import lombok.EqualsAndHashCode;
 
 import java.util.List;
 
+@EqualsAndHashCode
 public class Triangle extends AbstractFigure {
     
     public static final String NOT_TRIANGLE_SHAPE = "삼각형 모양이 아닙니다. 다시 입력해주세요.";
