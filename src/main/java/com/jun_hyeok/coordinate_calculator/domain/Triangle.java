@@ -28,14 +28,17 @@ public class Triangle extends AbstractFigure {
         double distance1 = pointList.get(0).distance(pointList.get(1));
         double distance2 = pointList.get(1).distance(pointList.get(2));
         double distance3 = pointList.get(0).distance(pointList.get(2));
-        
+    
+        return getTriangleExtent(distance1, distance2, distance3);
+    }
+    
+    private static double getTriangleExtent(double distance1, double distance2, double distance3) {
         double halfOfSum = (distance1 + distance2 + distance3) / 2;
-        
         return Math.sqrt(halfOfSum * (halfOfSum - distance1) * (halfOfSum - distance2) * (halfOfSum - distance3));
     }
     
     @Override
     public String getResultExtentString() {
-        return null;
+        return "삼각형 넓이는 " + getExtent();
     }
 }
