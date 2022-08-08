@@ -23,7 +23,15 @@ public class Triangle extends AbstractFigure {
     
     @Override
     public double getExtent() {
-        return 0;
+        Points points = getPoints();
+        List<Point> pointList = points.getPoints();
+        double distance1 = pointList.get(0).distance(pointList.get(1));
+        double distance2 = pointList.get(1).distance(pointList.get(2));
+        double distance3 = pointList.get(0).distance(pointList.get(2));
+        
+        double halfOfSum = (distance1 + distance2 + distance3) / 2;
+        
+        return Math.sqrt(halfOfSum * (halfOfSum - distance1) * (halfOfSum - distance2) * (halfOfSum - distance3));
     }
     
     @Override

@@ -7,8 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TriangleTest {
@@ -22,5 +21,13 @@ class TriangleTest {
         assertThatThrownBy(() -> new Triangle(points))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage(Triangle.NOT_TRIANGLE_SHAPE);
+    }
+    
+    @Test
+    @DisplayName("삼각형 넓이 구하기")
+    void get_triangle_extent() {
+        Figure figure = InputView.getFigure("(10,10)-(14,15)-(20,8)");
+        double extent = figure.getExtent();
+        assertThat(extent).isEqualTo(29, offset(0.999));
     }
 }
