@@ -62,6 +62,6 @@ public class Square extends AbstractFigure {
     
     @Override
     public String getResultExtentString() {
-        return null;
+        return "사각형 넓이는 " + getExtent();
     }
 }
