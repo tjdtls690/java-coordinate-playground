@@ -6,11 +6,13 @@ import lombok.EqualsAndHashCode;
 import java.util.List;
 import java.util.Set;
 import java.util.function.Function;
-import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 @EqualsAndHashCode
 public class Square extends AbstractFigure {
+    
+    public static final String NOT_SQUARE_SHAPE = "직사각형 형태가 아닙니다. 다시 입력해주세요.";
+    
     public Square(List<Point> points) throws IllegalArgumentException {
         super(points);
         checkCorrectSquare(points);
@@ -21,7 +23,7 @@ public class Square extends AbstractFigure {
         Set<Integer> yNums = convertToUniqueYAxis(points);
         
         if (isNotTwoPoints(xNums) || isNotTwoPoints(yNums)) {
-            throw new IllegalArgumentException("직사각형 형태가 아닙니다. 다시 입력해주세요.");
+            throw new IllegalArgumentException(NOT_SQUARE_SHAPE);
         }
     }
     
