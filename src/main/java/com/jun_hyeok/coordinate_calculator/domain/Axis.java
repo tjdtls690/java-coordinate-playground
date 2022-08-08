@@ -9,7 +9,7 @@ public class Axis {
     public static final String COORDINATE_RANGE_EXCEEDED = "좌표의 범위를 벗어났습니다. 다시 입력해주세요.";
     private final int axis;
     
-    public Axis(int axis) throws IllegalArgumentException{
+    public Axis(int axis) throws IllegalArgumentException {
         if (axis > MAX_COORDINATE_NUM || axis < MIN_COORDINATE_NUM) {
             throw new IllegalArgumentException(COORDINATE_RANGE_EXCEEDED);
         }

@@ -64,7 +64,7 @@ public class InputView {
     }
     
     private static void isCorrectInput(String input) throws IllegalArgumentException {
-        Matcher matcher = Pattern.compile("(\\([0-9]{1,2},[0-9]{1,2}\\))(-(\\([0-9]{1,2},[0-9]{1,2}\\))){0,3}").matcher(input);
+        Matcher matcher = Pattern.compile("(\\([0-9]{1,2},[0-9]{1,2}\\))(-(\\([0-9]{1,2},[0-9]{1,2}\\)))*").matcher(input);
         if (!matcher.matches()) {
             throw new IllegalArgumentException(NOT_VALID_INPUT);
         }

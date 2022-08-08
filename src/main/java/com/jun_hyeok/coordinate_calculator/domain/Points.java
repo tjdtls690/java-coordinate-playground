@@ -1,7 +1,10 @@
 package com.jun_hyeok.coordinate_calculator.domain;
 
+import lombok.EqualsAndHashCode;
+
 import java.util.List;
 
+@EqualsAndHashCode
 public class Points {
     public static final String COORDINATE_NUMBER_ESCAPE = "좌표의 입력 갯수가 맞지 않습니다. 다시 입력해주세요.";
     public static final int MIN_POINTS_NUM = 2;

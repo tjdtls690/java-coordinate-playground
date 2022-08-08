@@ -1,7 +1,10 @@
 package com.jun_hyeok.coordinate_calculator.domain;
 
+import lombok.EqualsAndHashCode;
+
 import java.util.List;
 
+@EqualsAndHashCode
 abstract public class AbstractFigure implements Figure {
     private final Points points;
     

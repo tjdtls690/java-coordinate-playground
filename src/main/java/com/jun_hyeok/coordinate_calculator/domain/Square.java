@@ -1,14 +1,12 @@
 package com.jun_hyeok.coordinate_calculator.domain;
 
 import com.jun_hyeok.coordinate_calculator.view.InputView;
-import lombok.EqualsAndHashCode;
 
 import java.util.List;
 import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-@EqualsAndHashCode
 public class Square extends AbstractFigure {
     
     public static final String NOT_SQUARE_SHAPE = "직사각형 형태가 아닙니다. 다시 입력해주세요.";

@@ -13,7 +13,7 @@ public class PointTest {
         assertThatThrownBy(() -> new Point(1, 25))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("좌표의 범위를 벗어났습니다. 다시 입력해주세요.");
-    
+        
         assertThatThrownBy(() -> new Point(0, 24))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("좌표의 범위를 벗어났습니다. 다시 입력해주세요.");

@@ -1,10 +1,7 @@
 package com.jun_hyeok.coordinate_calculator.domain;
 
-import lombok.EqualsAndHashCode;
-
 import java.util.List;
 
-@EqualsAndHashCode
 public class Triangle extends AbstractFigure {
     
     public static final String NOT_TRIANGLE_SHAPE = "삼각형 모양이 아닙니다. 다시 입력해주세요.";
@@ -28,7 +25,7 @@ public class Triangle extends AbstractFigure {
         double distance1 = pointList.get(0).distance(pointList.get(1));
         double distance2 = pointList.get(1).distance(pointList.get(2));
         double distance3 = pointList.get(0).distance(pointList.get(2));
-    
+        
         return getTriangleExtent(distance1, distance2, distance3);
     }
     
