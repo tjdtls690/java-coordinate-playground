@@ -8,7 +8,6 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-@EqualsAndHashCode
 public class Square extends AbstractFigure {
     
     public static final String NOT_SQUARE_SHAPE = "직사각형 형태가 아닙니다. 다시 입력해주세요.";

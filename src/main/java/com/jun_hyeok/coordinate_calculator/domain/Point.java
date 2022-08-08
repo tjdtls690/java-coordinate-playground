@@ -27,4 +27,11 @@ public class Point {
     public int getYAxis() {
         return yAxis.getAxis();
     }
+    
+    public double getSlope(Point point) {
+        if (this.xAxis.equals(point.xAxis)) {
+            return Double.MAX_VALUE;
+        }
+        return this.yAxis.distance(point.yAxis) / this.xAxis.distance(point.xAxis);
+    }
 }

@@ -5,7 +5,6 @@ import lombok.EqualsAndHashCode;
 
 import java.util.List;
 
-@EqualsAndHashCode
 public class Line extends AbstractFigure {
     public Line(List<Point> points) throws IllegalArgumentException {
         super(points);
