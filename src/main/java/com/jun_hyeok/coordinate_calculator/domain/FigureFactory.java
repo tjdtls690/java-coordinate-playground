@@ -13,11 +13,13 @@ public class FigureFactory {
     private static final HashMap<Integer, Function<List<Point>, Figure>> figureFactoryMap = new HashMap<>();
     
     public static final int LINE_POINTS_NUM = 2;
-    
+    public static final int TRIANGLE_POINTS_NUM = 3;
     public static final int SQUARE_POINTS_NUM = 4;
+    
     
     static {
         figureFactoryMap.put(LINE_POINTS_NUM, Line::new);
+        figureFactoryMap.put(TRIANGLE_POINTS_NUM, Triangle::new);
         figureFactoryMap.put(SQUARE_POINTS_NUM, Square::new);
     }
     

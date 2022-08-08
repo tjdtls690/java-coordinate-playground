@@ -1,9 +1,6 @@
 package com.jun_hyeok.coordinate_calculator.view;
 
-import com.jun_hyeok.coordinate_calculator.domain.Figure;
-import com.jun_hyeok.coordinate_calculator.domain.Line;
-import com.jun_hyeok.coordinate_calculator.domain.Point;
-import com.jun_hyeok.coordinate_calculator.domain.Square;
+import com.jun_hyeok.coordinate_calculator.domain.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -26,7 +23,7 @@ class InputViewTest {
     
     @Test
     @DisplayName("사각형 객체 생성")
-    void create_square(){
+    void create_square() {
         Figure figure = InputView.getFigure("(10,10)-(22,10)-(22,18)-(10,18)");
         List<Point> points = new ArrayList<>();
         points.add(new Point(10, 10));
@@ -34,5 +31,16 @@ class InputViewTest {
         points.add(new Point(22, 18));
         points.add(new Point(10, 18));
         assertThat(figure).isEqualTo(new Square(points));
+    }
+    
+    @Test
+    @DisplayName("삼각형 객체 생성")
+    void create_triangle() {
+        Figure figure = InputView.getFigure("(10,10)-(14,15)-(20,8)");
+        List<Point> points = new ArrayList<>();
+        points.add(new Point(10, 10));
+        points.add(new Point(14, 15));
+        points.add(new Point(20, 8));
+        assertThat(figure).isEqualTo(new Triangle(points));
     }
 }
